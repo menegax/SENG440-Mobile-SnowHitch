@@ -5,6 +5,30 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".GiveARideActivity">
+        tools:context=".GiveARideActivity" android:background="@color/colorPrimary">
 
+    <android.support.design.widget.FloatingActionButton
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:clickable="true" app:srcCompat="@android:drawable/ic_menu_add"
+            android:id="@+id/floatingActionButton2" app:backgroundTint="@color/colorPrimary" app:fabSize="normal"
+            app:maxImageSize="@android:dimen/app_icon_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/textView2" android:text="@string/textView2"
+            android:textSize="36sp" android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/_dynamic" android:visibility="visible"/>
+    <ListView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/colorPrimary"/>
 </android.support.constraint.ConstraintLayout>

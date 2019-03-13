@@ -2,4 +2,6 @@
     <string name="app_name">SnowHitched</string>
     <string name="button1">Hitch a ride</string>
     <string name="button2">Give a ride</string>
+    <string name="textView2">Give A Ride</string>
+    <string name="textView3">Hitch A Ride</string>
 </resources>
