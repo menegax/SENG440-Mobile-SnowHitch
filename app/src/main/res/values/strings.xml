@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">SnowHitched</string>
-    <string name="button1">Share a Ride</string>
-    <string name="button2">Request a Ride</string>
-    <string name="button3">View Rides</string>
-    <string name="button4">View Requests</string>
+    <string name="button1">Hitch a ride</string>
+    <string name="button2">Give a ride</string>
 </resources>

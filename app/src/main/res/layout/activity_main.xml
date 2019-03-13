@@ -7,34 +7,34 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/button2" app:layout_constraintHorizontal_bias="0.498" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/button1" android:text="@string/button2"/>
+            android:id="@+id/button2" app:layout_constraintHorizontal_bias="0.498"
+            android:text="@string/button2" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp" android:textSize="24sp" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp" android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
+            android:onClick="giveARide"/>
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/button1" app:layout_constraintHorizontal_bias="0.498" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:text="@string/button1"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/button3" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/button2" android:text="@string/button3"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/button4" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/button3" app:layout_constraintHorizontal_bias="0.501"
-            android:text="@string/button4"/>
+            android:id="@+id/button1"
+            app:layout_constraintBottom_toTopOf="@+id/button2" android:text="@string/button1" android:textSize="24sp"
+            android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" android:onClick="hitchARide"/>
     <TextView
             android:layout_width="225dp"
             android:layout_height="64dp" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent" android:id="@+id/textView" android:text="@string/app_name"
             android:textSize="36sp"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/snowboarding_clipart_penguin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/button1"/>
+
 </android.support.constraint.ConstraintLayout>
