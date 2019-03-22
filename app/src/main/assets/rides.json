@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Joshua Meneghini",
+    "mountain": "Mt Hutt",
+    "availableSeats": "2"
+  },
+  {
+    "name": "Jed O'Brien",
+    "mountain": "Mt Ruapehu",
+    "availableSeats": "3"
+  },
+  {
+    "name": "Jess Eagn",
+    "mountain": "Mt Coronet Peak",
+    "availableSeats": "1"
+  },
+  {
+    "name": "Adam Rundle",
+    "mountain": "Mt Remarkables",
+    "availableSeats": "2"
+  }
+]

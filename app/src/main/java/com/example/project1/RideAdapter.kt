@@ -39,7 +39,7 @@ import android.widget.ArrayAdapter
 
 import kotlinx.android.synthetic.main.rides_list.view.*
 
-class RideAdapter (context: Context, rides: List<Ride>)
+class RideAdapter (context: Context, rides: ArrayList<Ride>)
     : ArrayAdapter<Ride>(context, 0, rides) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
