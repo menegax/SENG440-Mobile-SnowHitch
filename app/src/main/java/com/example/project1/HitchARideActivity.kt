@@ -1,22 +1,17 @@
 package com.example.project1
 
 import android.app.AlertDialog
-import android.app.ListActivity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
-import android.view.View
-import android.widget.ArrayAdapter
+import android.util.JsonReader
 import android.widget.ListView
-import org.json.JSONArray
-import java.io.IOException
-import java.io.InputStream
-import java.time.LocalDate
-import java.util.*
+import java.io.FileNotFoundException
+import java.io.InputStreamReader
+
 
 class HitchARideActivity : AppCompatActivity() {
 
-    var rideList = arrayListOf<Ride>();
+    var rideList = arrayListOf<Ride>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,38 +19,49 @@ class HitchARideActivity : AppCompatActivity() {
 
         var listView = findViewById<ListView>(R.id.rides_list)
         // 1
-        //val rideList = rides
-        getRidesFromJSON()
+
+        try {
+            val file = openFileInput("rides.json")
+            val reader = JsonReader(InputStreamReader(file))
+
+            reader.beginArray()
+            while (reader.hasNext()) {
+                reader.beginObject()
+                var name = ""
+                var mountain = ""
+                var availableSeats = ""
+                while (reader.hasNext()) {
+                    val key = reader.nextName()
+                    when (key) {
+                        "name" -> name = reader.nextString()
+                        "mountain" -> mountain = reader.nextString()
+                        "availableSeats" -> availableSeats = reader.nextString()
+                    }
+                }
+                rideList.add(Ride(name, mountain, availableSeats))
+                reader.endObject()
+            }
+
+            reader.close()
+        } catch (e: FileNotFoundException) {
+        }
 
         val arrayAdapter = RideAdapter(this, rideList)
 
         listView.adapter = arrayAdapter
 
-    }
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedRide = rideList[position]
 
-    fun getRidesFromJSON() {
-        var json : String? = null
-        try {
-            val inputStream: InputStream = assets.open("rides.json")
-            json = inputStream.bufferedReader().use { it.readText() }
-
-            var jsonArray = JSONArray(json)
-
-            for (i in 0 until jsonArray.length()) {
-                var jsonObject = jsonArray.getJSONObject(i)
-                rideList.add(Ride(jsonObject.getString("name"), jsonObject.getString("mountain"), jsonObject.getString("availableSeats")))
+            val options = arrayOf("Map", "Email", "Text", "Call")
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Connect how?")
+            builder.setItems(options) { _, optionId ->
+                dispatchAction(optionId, selectedRide)
             }
-        } catch (e : IOException) {
-
+            builder.show()
         }
     }
-
-//    private val rides = listOf<Ride>(
-//        Ride("Joshua Meneghini", "joshuameneghini@gmail.com", "0273483623", "Mt Hutt", "2", "30-03-2019", "08:00", "Going early"),
-//        Ride("Jed O'Brien", "jedobrien@gmail.com", "0256987631", "Mt Ruapehu", "3", "30-03-2019", "07:00", "Going early"),
-//        Ride("Jess Eagan", "jesseagan@gmail.com", "0226987451", "Mt Coronet Peak", "2", "30-03-2019", "06:40", "Going early"),
-//        Ride("Adam Rundle", "adamrundle@gmail.com", "0215896434", "Mt Remarkables", "1", "30-03-2019", "07:25", "Going early")
-//    )
 
     fun dispatchAction(optionId: Int, ride: Ride) {
         when (optionId) {
@@ -66,4 +72,3 @@ class HitchARideActivity : AppCompatActivity() {
         }
     }
 }
-
