@@ -1,6 +1,7 @@
 package com.example.project1
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.JsonReader
@@ -8,6 +9,7 @@ import android.widget.ListView
 import java.io.FileNotFoundException
 import java.io.InputStreamReader
 
+const val EXTRA_Ride = "com.example.project1.RIDE"
 
 class HitchARideActivity : AppCompatActivity() {
 
@@ -16,7 +18,7 @@ class HitchARideActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hitch_aride)
-
+        supportActionBar?.title = "Hitch a Ride"
         var listView = findViewById<ListView>(R.id.rides_list)
         // 1
 
@@ -53,22 +55,10 @@ class HitchARideActivity : AppCompatActivity() {
         listView.setOnItemClickListener { _, _, position, _ ->
             val selectedRide = rideList[position]
 
-            val options = arrayOf("Map", "Email", "Text", "Call")
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Connect how?")
-            builder.setItems(options) { _, optionId ->
-                dispatchAction(optionId, selectedRide)
+            val intent = Intent(this, RideDetailsActivity::class.java).apply {
+                putExtra("rideData", selectedRide)
             }
-            builder.show()
-        }
-    }
-
-    fun dispatchAction(optionId: Int, ride: Ride) {
-        when (optionId) {
-            0 -> TODO("Map")
-            1 -> TODO("Email")
-            2 -> TODO("Text")
-            3 -> TODO("Call")
+            startActivity(intent)
         }
     }
 }

@@ -7,13 +7,6 @@
         android:layout_height="match_parent"
         tools:context=".HitchARideActivity" android:background="@color/colorPrimary">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/textView3" android:text="@string/textView3"
-            android:textSize="36sp"/>
-
     <ListView
             android:id="@+id/rides_list"
             android:layout_width="0dp"
@@ -21,5 +14,5 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 </android.support.constraint.ConstraintLayout>

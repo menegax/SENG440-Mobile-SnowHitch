@@ -19,6 +19,8 @@ class GiveARideActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_give_aride)
+
+        supportActionBar?.title = "Give a Ride"
     }
 
     private fun readRides() {
@@ -71,7 +73,7 @@ class GiveARideActivity : AppCompatActivity() {
     fun shareRide(view: View) {
         readRides()
 
-        var name = findViewById<EditText>(R.id.name).text.toString()
+        var name = findViewById<EditText>(R.id.nameText).text.toString()
         var mountain = findViewById<EditText>(R.id.mountain).text.toString()
         var availableSeats = findViewById<EditText>(R.id.availableSeats).text.toString()
 
