@@ -26,6 +26,9 @@ class RideDetailsActivity : AppCompatActivity() {
         val availableSeatsText = findViewById<TextView>(R.id.availableSeats).apply {
             text = ride?.availableSeats
         }
+        val commentsText = findViewById<TextView>(R.id.comments).apply {
+            text = ride?.comments
+        }
     }
 
     fun contact(view: View){

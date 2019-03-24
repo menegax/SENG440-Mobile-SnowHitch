@@ -45,10 +45,11 @@ class RideAdapter (context: Context, rides: ArrayList<Ride>)
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val rootView = convertView ?: LayoutInflater.from(context).inflate(R.layout.rides_list, parent, false)
         val currentRide = getItem(position)
+        val seatsText = currentRide?.availableSeats + " available seats"
 
-        rootView.rides_list_title.text = currentRide.name
-        rootView.rides_list_subtitle.text = currentRide.mountain
-        rootView.rides_list_detail.text = currentRide.availableSeats + " available seats"
+        rootView.rides_list_title.text = currentRide?.name
+        rootView.rides_list_subtitle.text = currentRide?.mountain
+        rootView.rides_list_detail.text = seatsText
 
         return rootView
     }

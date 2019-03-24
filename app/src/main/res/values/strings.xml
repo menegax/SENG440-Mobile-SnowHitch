@@ -2,6 +2,17 @@
     <string name="app_name">SnowHitched</string>
     <string name="button1">Hitch a ride</string>
     <string name="button2">Give a ride</string>
-    <string name="textView2">Give A Ride</string>
-    <string name="textView3">Hitch A Ride</string>
+    <string name="text1">Name</string>
+    <string name="text2">Email</string>
+    <string name="text3">Cellphone Number</string>
+    <string name="text4">Destination Mountain</string>
+    <string name="text5">Number of Available Seats</string>
+    <string name="text6">Date</string>
+    <string name="text7">Time (hh/mm)</string>
+    <string name="text8">Comments</string>
+    <string name="button3">SHARE RIDE!</string>
+    <string name="text9">Contact:</string>
+    <string name="text10">Available Seats:</string>
+    <string name="text11">Comments:</string>
+    <string name="button4">CONNECT</string>
 </resources>

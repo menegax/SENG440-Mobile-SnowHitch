@@ -14,7 +14,7 @@ import java.io.*
 
 class GiveARideActivity : AppCompatActivity() {
 
-    var rideList = arrayListOf<Ride>()
+    private var rideList = arrayListOf<Ride>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +34,21 @@ class GiveARideActivity : AppCompatActivity() {
                 var name = ""
                 var mountain = ""
                 var availableSeats = ""
+                var email = ""
+                var cellphone = ""
+                var comments = ""
                 while (reader.hasNext()) {
                     val key = reader.nextName()
                     when (key) {
                         "name" -> name = reader.nextString()
                         "mountain" -> mountain = reader.nextString()
                         "availableSeats" -> availableSeats = reader.nextString()
+                        "email" -> email = reader.nextString()
+                        "cellphone" -> cellphone = reader.nextString()
+                        "comments" -> comments = reader.nextString()
                     }
                 }
-                rideList.add(Ride(name, mountain, availableSeats))
+                rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments))
                 reader.endObject()
             }
 
@@ -58,34 +64,52 @@ class GiveARideActivity : AppCompatActivity() {
         writer.setIndent("  ")
 
         writer.beginArray()
-        for (i in 0..rideList.size-1) {
+        for (i in 0 until rideList.size) {
             var ride = rideList[i]
             writer.beginObject()
             writer.name("name").value(ride.name)
             writer.name("mountain").value(ride.mountain)
             writer.name("availableSeats").value(ride.availableSeats)
+            writer.name("email").value(ride.email)
+            writer.name("cellphone").value(ride.cellphone)
+            writer.name("comments").value(ride.comments)
             writer.endObject()
         }
         writer.endArray()
         writer.close()
     }
 
-    fun shareRide(view: View) {
-        readRides()
+    private fun checkRide(name: String, mountain: String, availableSeats: String, email: String, cellphone: String, comments: String): Boolean {
+        var check = false
 
-        var name = findViewById<EditText>(R.id.nameText).text.toString()
-        var mountain = findViewById<EditText>(R.id.mountain).text.toString()
-        var availableSeats = findViewById<EditText>(R.id.availableSeats).text.toString()
-
-        rideList.add(Ride(name, mountain, availableSeats))
-
-        writeToFile()
-
-        val intent = Intent(this, MainActivity::class.java).apply {
+        if (name != "" && mountain != "" && availableSeats != "" && email != "" && cellphone != "" && comments != "") {
+            rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments))
+            check = true
         }
+        return check
+    }
 
-        startActivity(intent)
+    fun shareRide(view: View) {
+        val name = findViewById<EditText>(R.id.nameText).text.toString()
+        val mountain = findViewById<EditText>(R.id.mountain).text.toString()
+        val availableSeats = findViewById<EditText>(R.id.availableSeats).text.toString()
+        val email = findViewById<EditText>(R.id.email).text.toString()
+        val cellphone = findViewById<EditText>(R.id.cellphone).text.toString()
+        val comments = findViewById<EditText>(R.id.comments).text.toString()
+        val check = checkRide(name, mountain, availableSeats, email, cellphone, comments)
+        if (check) {
+            readRides()
+            writeToFile()
 
-        Toast.makeText(applicationContext,"You successfully shared your ride to $mountain",Toast.LENGTH_LONG).show()
+            val intent = Intent(this, MainActivity::class.java).apply {
+            }
+            startActivity(intent)
+
+            Toast.makeText(applicationContext, "You successfully shared your ride to $mountain", Toast.LENGTH_LONG)
+                .show()
+        } else {
+            Toast.makeText(applicationContext, "Ride could not be shared; check fields", Toast.LENGTH_LONG)
+                .show()
+        }
     }
 }

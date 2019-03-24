@@ -1,6 +1,5 @@
 package com.example.project1
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -9,17 +8,15 @@ import android.widget.ListView
 import java.io.FileNotFoundException
 import java.io.InputStreamReader
 
-const val EXTRA_Ride = "com.example.project1.RIDE"
-
 class HitchARideActivity : AppCompatActivity() {
 
-    var rideList = arrayListOf<Ride>()
+    private var rideList = arrayListOf<Ride>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hitch_aride)
         supportActionBar?.title = "Hitch a Ride"
-        var listView = findViewById<ListView>(R.id.rides_list)
+        val listView = findViewById<ListView>(R.id.rides_list)
         // 1
 
         try {
@@ -32,15 +29,21 @@ class HitchARideActivity : AppCompatActivity() {
                 var name = ""
                 var mountain = ""
                 var availableSeats = ""
+                var email = ""
+                var cellphone = ""
+                var comments = ""
                 while (reader.hasNext()) {
                     val key = reader.nextName()
                     when (key) {
                         "name" -> name = reader.nextString()
                         "mountain" -> mountain = reader.nextString()
                         "availableSeats" -> availableSeats = reader.nextString()
+                        "email" -> email = reader.nextString()
+                        "cellphone" -> cellphone = reader.nextString()
+                        "comments" -> comments = reader.nextString()
                     }
                 }
-                rideList.add(Ride(name, mountain, availableSeats))
+                rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments))
                 reader.endObject()
             }
 
