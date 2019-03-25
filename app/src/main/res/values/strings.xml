@@ -15,4 +15,12 @@
     <string name="text10">Available Seats:</string>
     <string name="text11">Comments:</string>
     <string name="button4">CONNECT</string>
+    <string-array name="mountain_list">
+        <item>Mountain</item>
+        <item>Mt Ruapehu</item>
+        <item>Mt Hutt</item>
+        <item>Mt Coronet Peak</item>
+        <item>Mt Remarkaables</item>
+        <item>Mt Cheeseman</item>
+    </string-array>
 </resources>

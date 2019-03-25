@@ -8,6 +8,7 @@ import android.util.JsonReader
 import android.util.JsonWriter
 import android.view.View
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import java.io.*
 
@@ -82,7 +83,7 @@ class GiveARideActivity : AppCompatActivity() {
     private fun checkRide(name: String, mountain: String, availableSeats: String, email: String, cellphone: String, comments: String): Boolean {
         var check = false
 
-        if (name != "" && mountain != "" && availableSeats != "" && email != "" && cellphone != "" && comments != "") {
+        if (name != "" && mountain != "Mountain" && availableSeats != "" && email != "" && cellphone != "" && comments != "") {
             rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments))
             check = true
         }
@@ -91,7 +92,7 @@ class GiveARideActivity : AppCompatActivity() {
 
     fun shareRide(view: View) {
         val name = findViewById<EditText>(R.id.nameText).text.toString()
-        val mountain = findViewById<EditText>(R.id.mountain).text.toString()
+        val mountain = findViewById<Spinner>(R.id.mountain).selectedItem.toString()
         val availableSeats = findViewById<EditText>(R.id.availableSeats).text.toString()
         val email = findViewById<EditText>(R.id.email).text.toString()
         val cellphone = findViewById<EditText>(R.id.cellphone).text.toString()
