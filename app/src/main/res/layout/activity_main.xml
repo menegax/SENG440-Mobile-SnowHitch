@@ -28,8 +28,9 @@
             android:layout_height="0dp" app:srcCompat="@drawable/snowboarding_clipart_penguin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView"
-            android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/button1"
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/button1"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="32dp" android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp" android:layout_marginLeft="32dp" android:layout_marginStart="32dp"/>
 
 </android.support.constraint.ConstraintLayout>

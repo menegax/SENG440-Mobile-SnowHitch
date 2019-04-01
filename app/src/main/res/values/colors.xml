@@ -3,4 +3,24 @@
     <color name="colorPrimary">#C9E7FD</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!-- 1st Gradient color -->
+    <!--<color name="colorPurple_A400">#D500F9</color>-->
+    <!--<color name="colorPurple_900">#4A148C</color>-->
+    <!--&lt;!&ndash; ./ 1st Gradient color &ndash;&gt;-->
+
+    <!--&lt;!&ndash; 2nd Gradient color &ndash;&gt;-->
+    <!--<color name="colorAmber_A400">#FFC400</color>-->
+    <!--<color name="colorAmber_900">#FF6F00</color>-->
+    <!--&lt;!&ndash; ./ 2nd Gradient color &ndash;&gt;-->
+
+    <!--&lt;!&ndash; 3rd Gradient color &ndash;&gt;-->
+    <!--<color name="colorGreen_A400">#00E676</color>-->
+    <!--<color name="colorGreen_900">#1B5E20</color>-->
+    <!--&lt;!&ndash; ./ 3rd Gradient color &ndash;&gt;-->
+
+    <!--&lt;!&ndash; 4th Gradient color &ndash;&gt;-->
+    <!--<color name="colorRed_A400">#FF1744</color>-->
+    <!--<color name="colorRed_900">#B71C1C</color>-->
+    <!-- ./ 4th Gradient color -->
 </resources>

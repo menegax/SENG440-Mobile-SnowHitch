@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.JsonReader
 import android.util.JsonWriter
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
@@ -83,7 +84,7 @@ class GiveARideActivity : AppCompatActivity() {
     private fun checkRide(name: String, mountain: String, availableSeats: String, email: String, cellphone: String, comments: String): Boolean {
         var check = false
 
-        if (name != "" && mountain != "Mountain" && availableSeats != "" && email != "" && cellphone != "" && comments != "") {
+        if (name != "" && (mountain != "Mountain" && mountain != "Montagne") && availableSeats != "" && email != "" && cellphone != "") {
             rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments))
             check = true
         }
@@ -111,6 +112,8 @@ class GiveARideActivity : AppCompatActivity() {
         } else {
             Toast.makeText(applicationContext, "Ride could not be shared; check fields", Toast.LENGTH_LONG)
                 .show()
+            val bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+            view.startAnimation(bounceAnimation)
         }
     }
 }
