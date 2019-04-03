@@ -32,6 +32,7 @@ class HitchARideActivity : AppCompatActivity() {
                 var email = ""
                 var cellphone = ""
                 var comments = ""
+                var date = ""
                 while (reader.hasNext()) {
                     val key = reader.nextName()
                     when (key) {
@@ -41,14 +42,16 @@ class HitchARideActivity : AppCompatActivity() {
                         "email" -> email = reader.nextString()
                         "cellphone" -> cellphone = reader.nextString()
                         "comments" -> comments = reader.nextString()
+                        "date" -> date = reader.nextString()
                     }
                 }
-                rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments))
+                rideList.add(Ride(name, mountain, availableSeats, email, cellphone, comments, date))
                 reader.endObject()
             }
 
             reader.close()
         } catch (e: FileNotFoundException) {
+            e.printStackTrace()
         }
 
         val arrayAdapter = RideAdapter(this, rideList)

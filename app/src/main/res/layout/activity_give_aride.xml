@@ -4,21 +4,11 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".GiveARideActivity">
+            tools:context=".GiveARideActivity" android:background="@color/colorPrimary">
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:context=".GiveARideActivity" android:background="@color/colorPrimary">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" android:id="@+id/dateText" android:text="@string/text6"
-                android:textSize="18sp" app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintBottom_toTopOf="@+id/date" android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp" android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
-                android:layout_marginBottom="16dp" android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/availableSeats"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="39dp"
@@ -51,14 +41,6 @@
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
                 android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="16dp" android:hint="@string/text3"/>
-        <CalendarView
-                android:layout_width="0dp"
-                android:layout_height="342dp"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                android:id="@+id/date" android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="30dp" app:layout_constraintTop_toBottomOf="@+id/availableSeats"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -73,32 +55,27 @@
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="time"
-                android:ems="10"
-                android:id="@+id/time" android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/date" android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
-                android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="16dp" android:hint="@string/text7"/>
-        <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/comments" android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/time" android:layout_marginEnd="16dp"
+                android:id="@+id/comments"
+                android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
                 android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="16dp" android:hint="@string/text8"/>
+                android:layout_marginLeft="16dp" android:hint="@string/text8"
+                app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/calendarView"
+                android:layout_marginTop="16dp"
+        />
         <Button
                 android:text="@string/button3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/shareRide" android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/comments" app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/shareRide"
+                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp" android:onClick="shareRide" android:layout_marginBottom="32dp"
+                android:layout_marginRight="16dp" android:onClick="shareRide"
+                app:layout_constraintHorizontal_bias="1.0" app:layout_constraintTop_toBottomOf="@+id/comments"
+                android:layout_marginTop="16dp" android:layout_marginBottom="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         <Spinner
                 android:layout_width="0dp"
@@ -109,5 +86,19 @@
                 android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
                 android:entries="@array/mountain_list" android:spinnerMode="dropdown"
                 android:dropDownWidth="wrap_content"/>
+        <CalendarView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/calendarView" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView"/>
+        <TextView
+                android:text="@string/text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/availableSeats"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp" android:textSize="18sp"/>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

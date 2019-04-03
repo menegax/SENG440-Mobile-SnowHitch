@@ -7,7 +7,7 @@
     <string name="text3">Cellphone Number</string>
     <string name="text4">Destination Mountain</string>
     <string name="text5">Number of Available Seats</string>
-    <string name="text6">Date</string>
+    <string name="text6">Date:</string>
     <string name="text7">Time (hh/mm)</string>
     <string name="text8">Comments</string>
     <string name="button3">SHARE RIDE!</string>
@@ -23,4 +23,5 @@
         <item>Mt Remarkaables</item>
         <item>Mt Cheeseman</item>
     </string-array>
+    <string name="button5">Pick Date</string>
 </resources>

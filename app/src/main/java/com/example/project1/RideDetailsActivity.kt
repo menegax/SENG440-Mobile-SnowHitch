@@ -30,6 +30,9 @@ class RideDetailsActivity : AppCompatActivity() {
         val commentsText = findViewById<TextView>(R.id.comments).apply {
             text = ride?.comments
         }
+        val dateText = findViewById<TextView>(R.id.date).apply {
+            text = ride?.date
+        }
     }
 
     fun contact(view: View){

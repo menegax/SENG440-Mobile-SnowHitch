@@ -12,7 +12,7 @@
     <string name="text3">"Numéro de téléphone portable"</string>
     <string name="text4">"Destination Montagne"</string>
     <string name="text5">"Nombre de sièges disponibles"</string>
-    <string name="text6">"journée"</string>
+    <string name="text6">journée:</string>
     <string name="text7">"Temps (hh / mm)"</string>
     <string name="text9">"Contact: "</string>
     <string name="text8">"commentaires"</string>
@@ -24,4 +24,5 @@
         <item>Mt Remarkaables</item>
         <item>Mt Cheeseman</item>
     </string-array>
+    <string name="button5">"Choisis une date "</string>
 </resources>
