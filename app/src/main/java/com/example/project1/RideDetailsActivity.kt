@@ -19,7 +19,7 @@ class RideDetailsActivity : AppCompatActivity() {
 
         val ride = intent.getSerializableExtra("rideData") as? Ride
         val mountain = ride?.mountain
-        supportActionBar?.title = "Ride to $mountain"
+        supportActionBar?.title = getString(R.string.text13) + " $mountain"
 
         val nameText = findViewById<TextView>(R.id.name).apply {
             text = ride?.name

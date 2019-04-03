@@ -25,4 +25,5 @@
         <item>Mt Cheeseman</item>
     </string-array>
     <string name="button5">"Choisis une date "</string>
+    <string name="text13">Voyage en</string>
 </resources>

@@ -15,7 +15,7 @@ class HitchARideActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hitch_aride)
-        supportActionBar?.title = "Hitch a Ride"
+        supportActionBar?.title = getString(R.string.button1)
         val listView = findViewById<ListView>(R.id.rides_list)
         // 1
 

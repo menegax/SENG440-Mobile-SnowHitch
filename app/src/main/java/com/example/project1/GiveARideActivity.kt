@@ -22,7 +22,7 @@ class GiveARideActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_give_aride)
 
-        supportActionBar?.title = "Give a Ride"
+        supportActionBar?.title = getString(R.string.button2)
     }
 
     fun pickADate(view: View) {

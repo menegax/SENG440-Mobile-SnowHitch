@@ -24,4 +24,5 @@
         <item>Mt Cheeseman</item>
     </string-array>
     <string name="button5">Pick Date</string>
+    <string name="text13">Ride to</string>
 </resources>
