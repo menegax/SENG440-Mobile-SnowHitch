@@ -5,17 +5,17 @@
     <string name="button1">"Faire du stop"</string>
     <string name="button3">"COVOITURAGE!"</string>
     <string name="button4">RELIER</string>
-    <string name="text1">prénom</string>
+    <string name="text1">Prénom</string>
     <string name="text10">"Places libres:"</string>
     <string name="text11">"Commentaires:"</string>
     <string name="text2">Email</string>
     <string name="text3">"Numéro de téléphone portable"</string>
     <string name="text4">"Destination Montagne"</string>
     <string name="text5">"Nombre de sièges disponibles"</string>
-    <string name="text6">journée:</string>
+    <string name="text6">Journée:</string>
     <string name="text7">"Temps (hh / mm)"</string>
-    <string name="text9">"Contact: "</string>
-    <string name="text8">"commentaires"</string>
+    <string name="text9">"Contacter: "</string>
+    <string name="text8">Commentaires</string>
     <string-array name="mountain_list">
         <item>Montagne</item>
         <item>Mt Ruapehu</item>
@@ -26,4 +26,5 @@
     </string-array>
     <string name="button5">"Choisis une date "</string>
     <string name="text13">Voyage en</string>
+    <string name="text12">"Recherche montagne "</string>
 </resources>
