@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 
 class RideDetailsActivity : AppCompatActivity() {
@@ -39,7 +38,7 @@ class RideDetailsActivity : AppCompatActivity() {
         val ride = intent.getSerializableExtra("rideData") as? Ride
         val options = arrayOf("Email", "Text", "Call")
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Connect how?")
+        builder.setTitle(getString(R.string.text14))
         builder.setItems(options) { _, optionId ->
             dispatchAction(optionId, ride)
         }
