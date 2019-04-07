@@ -28,4 +28,6 @@
     <string name="text13">Voyage en</string>
     <string name="text12">"Recherche montagne "</string>
     <string name="text14">Comment contacter?</string>
+    <string name="text15">"Le trajet n'a pas pu être partagé; vérifier les champs "</string>
+    <string name="text16">"Vous avez partagé avec succès votre parcours avec "</string>
 </resources>

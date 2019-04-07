@@ -120,6 +120,8 @@ class GiveARideActivity : AppCompatActivity() {
         val dateString = Date(date).toString()
 
         val check = checkRide(name, mountain, availableSeats, email, cellphone, comments, dateString)
+
+        var text = ""
         if (check) {
             readRides()
             writeToFile()
@@ -127,11 +129,12 @@ class GiveARideActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java).apply {
             }
             startActivity(intent)
-
-            Toast.makeText(applicationContext, "You successfully shared your ride to $mountain", Toast.LENGTH_LONG)
+            text = getString(R.string.text16) + mountain
+            Toast.makeText(applicationContext, text, Toast.LENGTH_LONG)
                 .show()
         } else {
-            Toast.makeText(applicationContext, "Ride could not be shared; check fields", Toast.LENGTH_LONG)
+            text = getString(R.string.text15)
+            Toast.makeText(applicationContext, text, Toast.LENGTH_LONG)
                 .show()
             val bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce)
             view.startAnimation(bounceAnimation)

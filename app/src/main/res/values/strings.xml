@@ -27,4 +27,6 @@
     <string name="text13">Ride to</string>
     <string name="text12">Search Mountain</string>
     <string name="text14">Connect How?</string>
+    <string name="text15">Ride could not be shared; check fields</string>
+    <string name="text16">You successfully shared your ride to</string>
 </resources>
